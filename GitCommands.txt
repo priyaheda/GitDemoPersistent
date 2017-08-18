@@ -1,0 +1,212 @@
+Administrator@JAVA MINGW64 /c/GitDemo
+$ git config --global user.name "priya heda"
+
+Administrator@JAVA MINGW64 /c/GitDemo
+$ git config user.name
+priya heda
+
+Administrator@JAVA MINGW64 /c/GitDemo
+$ git config --global user.email "priya_heda@persistent.co.in"
+
+Administrator@JAVA MINGW64 /c/GitDemo
+$ git config user.email
+priya_heda@persistent.co.in
+
+Administrator@JAVA MINGW64 /c/GitDemo
+$ git config --list
+core.symlinks=false
+core.autocrlf=true
+core.fscache=true
+color.diff=auto
+color.status=auto
+color.branch=auto
+color.interactive=true
+help.format=html
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+diff.astextplain.textconv=astextplain
+rebase.autosquash=true
+user.name=priya heda
+user.email=priya_heda@persistent.co.in
+
+Administrator@JAVA MINGW64 /c/GitDemo
+$ git config --global core.editor notepad
+
+Administrator@JAVA MINGW64 /c/GitDemo
+$ git config --list
+core.symlinks=false
+core.autocrlf=true
+core.fscache=true
+color.diff=auto
+color.status=auto
+color.branch=auto
+color.interactive=true
+help.format=html
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+diff.astextplain.textconv=astextplain
+rebase.autosquash=true
+user.name=priya heda
+user.email=priya_heda@persistent.co.in
+core.editor=notepad
+Administrator@JAVA MINGW64 /c/GitDemo
+$ git init
+Initialized empty Git repository in C:/GitDemo/.git/
+
+Administrator@JAVA MINGW64 /c/GitDemo (master)
+$ git add file1.txt
+
+Administrator@JAVA MINGW64 /c/GitDemo (master)
+$ git commit -m "file1 is created- first commit"
+[master (root-commit) 04b17ad] file1 is created- first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file1.txt
+
+Administrator@JAVA MINGW64 /c/GitDemo (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   file1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        GitCommands.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Administrator@JAVA MINGW64 /c/GitDemo (master)
+$ git add .
+
+Administrator@JAVA MINGW64 /c/GitDemo (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   GitCommands.txt
+        modified:   file1.txt
+
+
+Administrator@JAVA MINGW64 /c/GitDemo (master)
+$ git commit -m "Change1 in file1"
+[master 79815e3] Change1 in file1
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+ create mode 100644 GitCommands.txt
+
+Administrator@JAVA MINGW64 /c/GitDemo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Administrator@JAVA MINGW64 /c/GitDemo (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   file1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Administrator@JAVA MINGW64 /c/GitDemo (master)
+$ git commit -am "change2 in file1.txt"
+[master fb79711] change2 in file1.txt
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Administrator@JAVA MINGW64 /c/GitDemo (master)
+$ git log
+commit fb79711283a2fc31a6ea95ec358a858a83464090
+Author: priya heda <priya_heda@persistent.co.in>
+Date:   Fri Aug 18 18:18:49 2017 +0530
+
+    change2 in file1.txt
+
+commit 79815e3c861a7ed6839cec72a0f2f6101d9dc232
+Author: priya heda <priya_heda@persistent.co.in>
+Date:   Fri Aug 18 18:15:58 2017 +0530
+
+    Change1 in file1
+
+commit 04b17adb61c9c334be8a89d705a5ad558cbba25e
+Author: priya heda <priya_heda@persistent.co.in>
+Date:   Fri Aug 18 18:09:48 2017 +0530
+
+    file1 is created- first commit
+
+
+Administrator@JAVA MINGW64 /c/GitDemo (master)
+$ git log --since=08-17-2017
+commit fb79711283a2fc31a6ea95ec358a858a83464090
+Author: priya heda <priya_heda@persistent.co.in>
+Date:   Fri Aug 18 18:18:49 2017 +0530
+
+    change2 in file1.txt
+
+commit 79815e3c861a7ed6839cec72a0f2f6101d9dc232
+Author: priya heda <priya_heda@persistent.co.in>
+Date:   Fri Aug 18 18:15:58 2017 +0530
+
+    Change1 in file1
+
+commit 04b17adb61c9c334be8a89d705a5ad558cbba25e
+Author: priya heda <priya_heda@persistent.co.in>
+Date:   Fri Aug 18 18:09:48 2017 +0530
+
+    file1 is created- first commit
+
+Administrator@JAVA MINGW64 /c/GitDemo (master)
+$ git log --until=08-17-2017
+
+Administrator@JAVA MINGW64 /c/GitDemo (master)
+$ git log --author=priya
+commit fb79711283a2fc31a6ea95ec358a858a83464090
+Author: priya heda <priya_heda@persistent.co.in>
+Date:   Fri Aug 18 18:18:49 2017 +0530
+
+    change2 in file1.txt
+
+commit 79815e3c861a7ed6839cec72a0f2f6101d9dc232
+Author: priya heda <priya_heda@persistent.co.in>
+Date:   Fri Aug 18 18:15:58 2017 +0530
+
+    Change1 in file1
+
+commit 04b17adb61c9c334be8a89d705a5ad558cbba25e
+Author: priya heda <priya_heda@persistent.co.in>
+Date:   Fri Aug 18 18:09:48 2017 +0530
+
+    file1 is created- first commit
+
+Administrator@JAVA MINGW64 /c/GitDemo (master)
+$ git log --author=priya --oneline -2
+fb79711 change2 in file1.txt
+79815e3 Change1 in file1
+
+Administrator@JAVA MINGW64 /c/GitDemo (master)
+$ git log file1.txt
+commit fb79711283a2fc31a6ea95ec358a858a83464090
+Author: priya heda <priya_heda@persistent.co.in>
+Date:   Fri Aug 18 18:18:49 2017 +0530
+
+    change2 in file1.txt
+
+commit 79815e3c861a7ed6839cec72a0f2f6101d9dc232
+Author: priya heda <priya_heda@persistent.co.in>
+Date:   Fri Aug 18 18:15:58 2017 +0530
+
+    Change1 in file1
+
+commit 04b17adb61c9c334be8a89d705a5ad558cbba25e
+Author: priya heda <priya_heda@persistent.co.in>
+Date:   Fri Aug 18 18:09:48 2017 +0530
+
+    file1 is created- first commit
+
+Administrator@JAVA MINGW64 /c/GitDemo (master)
+$ git log --help
+
+Administrator@JAVA MINGW64 /c/GitDemo (master)
+$ git log --grep="change 2"
